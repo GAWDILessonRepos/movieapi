@@ -13,14 +13,14 @@ describe 'Reviews Requests' do
   end
   describe "#index" do
     it 'gets all of the reviews for a movie' do
-      get "/movies/#{@movie.id}/reviews"
+      get "/movies/#{@movieF.id}/reviews"
       expect(response).to be_success
       json = JSON.parse(response.body)
     end
   end
   describe '#create' do
     it 'should create a review on that movie and return the movie' do
-      post "/movies/#{@movieF.id}/comments",
+      post "/movies/#{@movieF.id}/reviews",
       { review: {
           comment: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.",
           stars: 4,
