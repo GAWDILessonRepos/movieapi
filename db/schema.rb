@@ -11,9 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150305203507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "movies", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "gross"
+    t.date     "release"
+    t.string   "rating"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "comment"
+    t.integer  "stars"
+    t.string   "reviewer"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id", using: :btree
+
+  add_foreign_key "reviews", "movies"
 end
