@@ -2,7 +2,7 @@
 Rails.application.routes.draw do
 
   resources :movies, only: [:index, :show, :create, :update] do
-    resources :reviews, only: [:index, :show]
+    resources :reviews, only: [:index, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
