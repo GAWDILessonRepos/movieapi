@@ -1,7 +1,7 @@
 # DM
 require 'rails_helper'
 
-describe 'Comments Requests' do
+describe 'Reviews Requests' do
   before(:all) do
     Review.delete_all
     Movie.delete_all
@@ -12,14 +12,14 @@ describe 'Comments Requests' do
     @movieF = Movie.firstmo_
   end
   describe "#index" do
-    it 'gets all of the comments for a post' do
+    it 'gets all of the reviews for a movie' do
       get "/movies/#{@movie.id}/reviews"
       expect(response).to be_success
       json = JSON.parse(response.body)
     end
   end
   describe '#create' do
-    it 'should create a comment on that post and return the comment' do
+    it 'should create a review on that movie and return the movie' do
       post "/movies/#{@movieF.id}/comments",
       { review: {
           comment: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.",
