@@ -9,7 +9,7 @@ describe 'Comments Requests' do
     Movie.first.reviews << FactoryGirl.create_list(:review, 4)
     Movie.last.reviews << FactoryGirl.create_list(:review, 4)
     @movieL = Movie.last
-    @movieF = Movie.first
+    @movieF = Movie.firstmo_
   end
   describe "#index" do
     it 'gets all of the comments for a post' do
