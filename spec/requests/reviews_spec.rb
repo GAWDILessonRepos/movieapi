@@ -9,7 +9,7 @@ describe 'Reviews Requests' do
     Movie.first.reviews << FactoryGirl.create_list(:review, 4)
     Movie.last.reviews << FactoryGirl.create_list(:review, 4)
     @movieL = Movie.last
-    @movieF = Movie.firstmo_
+    @movieF = Movie.first
   end
   describe "#index" do
     it 'gets all of the reviews for a movie' do
