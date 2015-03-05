@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe 'Movie requests' do
 	before(:all) do
