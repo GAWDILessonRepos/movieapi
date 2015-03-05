@@ -37,15 +37,31 @@ describe 'Movie requests' do
 
 	describe '#show' do
 		it 'shows a single movie' do
-			get "/posts/#{@post.id}"
+			get "/movies/#{@movie.id}"
 			expect(response).to be_success
-			post = JSON.parse(response.body)
-			expect(post['id']).to eq @post.id
+			movie = JSON.parse(response.body)
+			expect(movie['id']).to eq @movie.id
 		end
 	end
 
+	describe '#update' do
+		it 'updates a new movie' do
+			patch "/movies/#{@movie.id}",
+			{ movie: {
+				title: "THE GOLDEN MAN",
+				gross: 2,
+				release: Date.new(2011, 9, 13),
+				rating: "R",
+				description: "yabba dabba do"
+				} }.to_json, 
+			{ 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
+			expect(response).to be_success
+			expect(response.content_type).to be Mime::JSON
 
-
+			movie = JSON.parse(response.body)
+			expect(movie["title"]).to eq "THE GOLDEN MAN"
+		end
+	end
 
 
 end
