@@ -40,9 +40,16 @@ RSpec.describe 'Movie model' do
         )).not_to be_valid
     end
 
-    # it 'is invalid without a release date' do
-    #   expect(Movie.create()).not_to be_valid
-    # end
+    it 'sets the gross to 0 as a default' do
+      grossTest = Movie.create(
+        title: "BAZZZZZING",
+        release: Date.new(2014, 11, 11),
+        rating: "PG-13",
+        description: "er huh huh... OK, Fred!"
+        )
+
+      expect(grossTest.gross).to eq 0
+    end
 
     # it 'is invalid without a description' do
     #   expect(Movie.create()).not_to be_valid
