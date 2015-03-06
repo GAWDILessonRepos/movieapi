@@ -84,7 +84,17 @@ RSpec.describe 'Movie model' do
       expect(Movie.create(
         title: "BAZZZZZING",
         gross: 2000000,
-        release: Date.new(2005, 5, 12),
+        release: Date.new(2014, 5, 12),
+        description: "yabba dabba do"
+        )).not_to be_valid
+    end
+
+    it 'must have a valid MPAA rating' do
+      expect(Movie.create(
+        title: "BAZZZZZING",
+        gross: 2000000,
+        rating: "Z",
+        release: Date.new(2014, 5, 12),
         description: "yabba dabba do"
         )).not_to be_valid
     end
