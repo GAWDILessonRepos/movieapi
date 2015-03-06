@@ -1,11 +1,9 @@
 # DS
 require 'rails_helper'
 
-RSpec.describe 'Movie model' do
+RSpec.describe 'Movie' do
   before(:all) do
     Movie.destroy_all
-    @movies = FactoryGirl.create_list(:movie, 10)
-    @movie = @movies.first
   end
 
   describe '.create' do
@@ -115,8 +113,14 @@ RSpec.describe 'Movie model' do
         )).not_to be_valid
     end
 
-    # it 'is valid with all the requirements' do
-    #   expect(Movie.create()).to be_valid
-    # end
+    it 'is valid if it meets all the requirements above' do
+      expect(Movie.create(
+        title: "BAZZZZZING",
+        gross: 2000000,
+        rating: "NC-17",
+        release: Date.new(2014, 5, 12),
+        description: "yabba dabba do"
+        )).to be_valid
+    end
   end
 end
