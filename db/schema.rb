@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150305203507) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
-    t.integer  "gross"
+    t.integer  "gross",       default: 0
     t.date     "release"
     t.string   "rating"
     t.string   "description"

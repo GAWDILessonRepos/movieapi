@@ -14,4 +14,7 @@
 
 class Movie < ActiveRecord::Base
 	has_many :reviews, dependent: :destroy
+
+	validates :title, presence: true, uniquness: true
+	validates :release, presence: true
 end
