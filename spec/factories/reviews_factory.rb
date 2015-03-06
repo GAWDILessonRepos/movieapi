@@ -2,7 +2,7 @@
 FactoryGirl.define do
   factory :review do
     comment Faker::Lorem.paragraph(1)
-    stars Faker::Number.digit
+    stars 3
     reviewer Faker::Name.name
     movie
   end
