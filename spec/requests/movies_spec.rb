@@ -22,10 +22,10 @@ describe 'Movie requests' do
 			{ movie: {
 				title: "BAZZZZZING",
 				gross: 2000000,
-				release: Date.new(1993, 5, 12),
+				release: Date.new(2013, 5, 12),
 				rating: "R",
 				description: "yabba dabba do"
-				} }.to_json, 
+				} }.to_json,
 			{ 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
 			expect(response).to be_success
 			expect(response.content_type).to be Mime::JSON
@@ -50,10 +50,10 @@ describe 'Movie requests' do
 			{ movie: {
 				title: "THE GOLDEN MAN",
 				gross: 2,
-				release: Date.new(2011, 9, 13),
+				release: Date.new(2013, 9, 13),
 				rating: "R",
 				description: "yabba dabba do"
-				} }.to_json, 
+				} }.to_json,
 			{ 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
 			expect(response).to be_success
 			expect(response.content_type).to be Mime::JSON
