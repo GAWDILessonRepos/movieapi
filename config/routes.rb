@@ -1,6 +1,6 @@
 # DM
 Rails.application.routes.draw do
-
+  root to: redirect('/movies')
   resources :movies, only: [:index, :show, :create, :update] do
     resources :reviews, only: [:index, :create]
   end
