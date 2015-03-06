@@ -8,6 +8,7 @@ gem 'newrelic_rpm'
 gem 'rack-cors'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'nokogiri'
+gem 'annotate', '~> 2.6.5'
 group :development, :test do
   gem 'capybara'
   gem 'rubocop'
