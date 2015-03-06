@@ -61,9 +61,14 @@ RSpec.describe 'Movie model' do
         )).not_to be_valid
     end
 
-    # it 'must have a release date with the last 5 years' do
-    #   expect(Movie.create()).not_to be_valid
-    # end
+    it 'must have a release date with the last 5 years' do
+      expect(Movie.create(
+        gross: 2000000,
+        release: Date.new(2005, 5, 12),
+        rating: "R",
+        description: "yabba dabba do"
+        )).not_to be_valid
+    end
 
     # it 'is valid with all the requirements' do
     #   expect(Movie.create()).to be_valid
