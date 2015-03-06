@@ -17,4 +17,6 @@ class Movie < ActiveRecord::Base
 
 	validates :title, presence: true, uniqueness: true
 	validates :release, presence: true
+
+	
 end
