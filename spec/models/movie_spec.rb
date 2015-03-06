@@ -8,7 +8,7 @@ RSpec.describe 'Movie' do
 
   describe '.create' do
     it 'creates a new movie' do
-      expect(Movie.create()).to be_a Movie
+      expect(Movie.new()).to be_a Movie
     end
 
     it 'is invalid without a title' do
@@ -24,7 +24,7 @@ RSpec.describe 'Movie' do
       Movie.create(
         title: "BAZZZZZING",
         gross: 1111111,
-        release: Date.new(2015, 12, 12),
+        release: Date.new(2014, 12, 12),
         rating: "R",
         description: "yabba dabba do"
         );
