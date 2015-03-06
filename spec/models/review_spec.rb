@@ -68,5 +68,21 @@ RSpec.describe Review do
         reviewer: 'encore'
         )).not_to be_valid
     end
+
+    it 'is valid if it meets all the requirements above' do
+      testMovie = Movie.create(
+        title: "BAZZZZZING",
+        gross: 2000000,
+        rating: "NC-17",
+        release: Date.new(2014, 5, 12),
+        description: "yabba dabba do"
+        )
+
+      expect(testMovie.reviews.create(
+        comment: 'so-so',
+        stars: 3,
+        reviewer: 'meh'
+        )).to be_valid
+    end
   end
 end
