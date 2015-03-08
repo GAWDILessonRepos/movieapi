@@ -4,16 +4,16 @@ require 'rails_helper'
 RSpec.describe 'Movie requests' do
 	before(:all) do
 		Movie.destroy_all
-		FactoryGirl.create :movie
-		FactoryGirl.create :movie
-		# FactoryGirl.create :movie
-		# FactoryGirl.create :movie
-		# FactoryGirl.create :movie
-		# FactoryGirl.create :movie
-		# FactoryGirl.create :movie
-		# FactoryGirl.create :movie
-		# FactoryGirl.create :movie
-		# FactoryGirl.create :movie
+		Movie.create!(title:'a', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'b', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'c', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'d', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'e', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'f', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'g', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'h', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'i', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
+		Movie.create!(title:'j', gross: 3, release: Date.new(2013,4,3), rating: 'R', description: 'something')
 		@movies = Movie.all
 		@movie = @movies.first
 	end
