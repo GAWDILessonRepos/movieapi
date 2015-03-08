@@ -18,4 +18,5 @@ class Review < ActiveRecord::Base
   belongs_to :movie
 
   validates :comment, presence: true
+  validates_uniqueness_of :reviewer, scope: :movie_id
 end

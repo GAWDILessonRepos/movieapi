@@ -35,6 +35,13 @@ RSpec.describe Review do
         release: Date.new(2014, 5, 12),
         description: "yabba dabba do"
         )
+      secondMovie = Movie.create(
+        title: 'FLOPPARINNO',
+        gross: 10,
+        rating: 'G',
+        release: Date.new(2010, 1, 11),
+        description: "best movie ever"
+        )
       testMovie.reviews.create(
         comment: 'yay',
         stars: 5,
@@ -46,6 +53,11 @@ RSpec.describe Review do
         stars: 1,
         reviewer: 'fake'
         )).not_to be_valid
+      expect(secondMovie.reviews.create(
+        comment: 'I kinda liked it',
+        stars: 4,
+        reviewer: 'fake'
+        )).to be_valid
     end
 
     it 'is invalid if stars are included but are not in range [1,5]' do
