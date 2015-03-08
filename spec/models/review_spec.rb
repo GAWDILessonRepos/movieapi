@@ -60,6 +60,21 @@ RSpec.describe Review do
         )).to be_valid
     end
 
+    it 'is valid if stars are excluded' do
+      testMovie = Movie.create(
+        title: "BAZZZZZING",
+        gross: 2000000,
+        rating: "NC-17",
+        release: Date.new(2014, 5, 12),
+        description: "yabba dabba do"
+        )
+
+      expect(testMovie.reviews.create(
+        comment: 'so-so',
+        reviewer: 'meh'
+        )).to be_valid
+    end
+
     it 'is invalid if stars are included but are not in range [1,5]' do
       testMovie = Movie.create(
         title: "BAZZZZZING",

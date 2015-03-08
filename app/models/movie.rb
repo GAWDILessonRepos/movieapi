@@ -23,12 +23,11 @@ class Movie < ActiveRecord::Base
 	validates :description, presence: true
 	validate :movie_cant_be_in_the_future
 
-
-	def movie_cant_be_older_than_5_years
-		if release && release < Date.today - 1825
-			errors.add(:release, "Movie can't be older than 5 years")
-		end
-	end
+	# def movie_cant_be_older_than_5_years
+	# 	if release && release < Date.today - 1825
+	# 		errors.add(:release, "Movie can't be older than 5 years")
+	# 	end
+	# end
 
 	def movie_cant_be_in_the_future
 		if release && release > Date.today + 1825
