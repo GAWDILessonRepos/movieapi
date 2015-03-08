@@ -68,14 +68,14 @@ RSpec.describe 'Movie' do
         )).not_to be_valid
     end
 
-    it 'must have a release date within the last 5 years' do
+    it 'must have a release date in the past or within the next 5 years' do
       expect(Movie.create(
         title: "BAZZZZZING",
         gross: 2000000,
         release: Date.new(2005, 5, 12),
         rating: "R",
         description: "yabba dabba do"
-        )).not_to be_valid
+        )).to be_valid
       expect(Movie.create(
         title: "BAZZZZZING",
         gross: 2000000,
