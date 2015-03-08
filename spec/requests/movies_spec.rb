@@ -1,9 +1,20 @@
 require 'rails_helper'
 
-describe 'Movie requests' do
+
+RSpec.describe 'Movie requests' do
 	before(:all) do
 		Movie.destroy_all
-		@movies = FactoryGirl.create_list(:movie, 10)
+		FactoryGirl.create :movie
+		FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		# FactoryGirl.create :movie
+		@movies = Movie.all
 		@movie = @movies.first
 	end
 
