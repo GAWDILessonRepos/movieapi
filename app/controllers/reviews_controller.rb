@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+	  before_filter :authenticate, only: [:create]
+
 	def index
 		@reviews = Movie.find(params[:movie_id]).reviews
 		render json: @reviews, status: 200
