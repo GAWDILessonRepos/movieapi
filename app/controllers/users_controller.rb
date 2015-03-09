@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       render json: {token: user.token}
     else
       head :unauthorized
+    end
   end
 
   def create
